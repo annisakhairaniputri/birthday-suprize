@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday 💖</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff5e78;
+        }
+
+        button {
+            background: #ff5e78;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff2f5d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Hai Sayangkku cintaakkuu 💕</h1>
+    <p>Ada sesuatu yang spesial buat sayangg hari ini...</p>
+    <button onclick="showSurprise()">Klik untuk Surprise 🎁</button>
+
+    <div id="surprise" class="hidden">
+        <h1>🎉 Selamat Ulang Tahun Calon Suamiikkuu 💖🎉</h1>
+        <p>
+            Terima kasih sudah hadir di hidup aku yaa sayangg.<br>
+            Sayangg adalah alasan senyum aku di setiap hari 💖<br><br>
+            Semoga semua impian sayangg tercapai,<br>
+            dan semoga aku selalu ada di sisi sayangg yaa,Aamiinn 🤍
+        </p>
+        <p><b>i love youu moree my lovee, sekarang dan selamanya ♾️</b></p>
+    </div>
+</div>
+
+<script>
+    function showSurprise() {
+        document.getElementById("surprise").classList.remove("hidden");
+        createHearts();S
+    }
+
+    function createHearts() {
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    }
+</script>
+
+</body>
+</html>
